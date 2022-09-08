@@ -1,0 +1,30 @@
+<header class="pt-3 pb-3">  
+    <div class="container flex-row flex-align-center "> 
+        <div class="logo">
+            <img [src]="imageSrc" [alt]="imageAlt" />
+        </div>
+        <div class="navigation fullWidth">
+            <nav [class.active]="classActive">
+                <ul class="d-flex">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Solutions</a>
+                    </li>
+                    <li>
+                        <a href="#">Case Studies</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="drawer-btn border-0" (click)="toggleField()"><span></span></button>
+        </div>
+</div>
+</header>
+<div class="overlay" [class.active]="classActive" (click)="toggleField()"></div>

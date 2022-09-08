@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Edit Person</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formInstance">
+    <div>
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>First Name *</mat-label>
+        <input matInput type="text" name="firstName" formControlName="firstName">
+        <mat-error *ngIf="formInstance.controls['firstName']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>Last Name *</mat-label>
+        <input matInput type="text" name="lastName" formControlName="lastName" />
+        <mat-error *ngIf="formInstance.controls['lastName']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>User Name *</mat-label>
+        <input matInput type="text" name="userName" formControlName="userName" />
+        <mat-error *ngIf="formInstance.controls['userName']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>City *</mat-label>
+        <input matInput type="text" name="city" formControlName="city" />
+        <mat-error *ngIf="formInstance.controls['city']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>Department *</mat-label>
+        <input matInput type="text" name="department" formControlName="department" />
+        <mat-error *ngIf="formInstance.controls['department']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div class="mt-10 mb-10 flex-justify-center" mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="formInstance.dirty && formInstance.errors" (click)="save()"
+    cdkFocusInitial>Update</button>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</div>
